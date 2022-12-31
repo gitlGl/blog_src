@@ -57,7 +57,7 @@ int main()
 ```C
 int kmp(char *src, int size_r, char *target, int size_)//利用前面记录求解
 {
-    待续
+    待续、、测试
 }
 int main()
 {
