@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: lin
-language: en
+language: zh-CN
 timezone: ''
 #
 
@@ -111,7 +111,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme:  yilia #antiquity 
+theme:  cactus #antiquity 
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
