@@ -20,7 +20,7 @@ default-storage-engine=INNODB#设置默认引擎默认
 ```
 打开cmd输入以下命令初始化MySQLmy ，初始化成功后根目录会生成data文件夹，用作存储数据。
 ```bash
-sqld --initialize-insecure
+mysqld --initialize-insecure
 ```
 
 
