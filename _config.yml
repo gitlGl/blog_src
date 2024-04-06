@@ -162,3 +162,17 @@ hexo_submit_urls_to_search_engine:
   find_what: http://example.com
   replace_with:  https://gitlgl.github.io ## 在bing站长平台中注册的域名
   
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
