@@ -33,7 +33,7 @@ mysqld -install
 ```bash
 net start mysql
 ```
-
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
 输入 ，设置root用户密码
 ```bash
 mysql admin -u root password 1234

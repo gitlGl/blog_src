@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>windows&#x4e0b;&#x5b89;&#x88c5;mysql</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <hr>
+<h2 id="title-mysql安装date-2022-11-03-201837tags-mysqlcategories-数据库">title: mysql安装
+date: 2022-11-03 20:18:37
+tags: [mysql]
+categories: [数据库]</h2>
+<h3 id="windows下安装mysql">windows下安装mysql</h3>
+<p><a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">下载网站</a>，选择zip下载,下载完成解压后把bin目录加入环境变量。</p>
+<p>在根目录新建一个的ini文件，文件内配置：</p>
+<!--more-->
+<pre><code class="language-ini"><span class="hljs-section">[mysql]</span>
+<span class="hljs-attr">default-character-set</span>=utf8<span class="hljs-comment">#设置字符编码</span>
+
+<span class="hljs-section">[mysqld]</span>
+<span class="hljs-attr">character-set-server</span>=utf8
+<span class="hljs-attr">default-storage-engine</span>=INNODB<span class="hljs-comment">#设置默认引擎默认</span>
+</code></pre>
+<p>打开cmd输入以下命令初始化MySQLmy ，初始化成功后根目录会生成data文件夹，用作存储数据。</p>
+<pre><code class="language-bash">mysqld --initialize-insecure
+</code></pre>
+<p>在cmd中输入, 安装mysal。</p>
+<pre><code class="language-bash">mysqld -install
+</code></pre>
+<p>输入，启动mysql服务</p>
+<pre><code class="language-bash">net start mysql
+</code></pre>
+<p>输入 ，设置root用户密码</p>
+<pre><code class="language-bash">mysql admin -u root password 1234
+</code></pre>
+<p>输入, 登录到mysql root用户</p>
+<pre><code class="language-bash">mysql -uroot -p1234
+</code></pre>
+<p>输入, 关闭mysql服务</p>
+<pre><code class="language-bash">net stop mysql 
+</code></pre>
+<p>卸载mysql
+先关闭mysql服务，然后输入，再删除环境变量与mysql安装目录</p>
+<pre><code class="language-bash">mysqld -remove mysql
+</code></pre>
+
+            
+            
+        </body>
+        </html>
